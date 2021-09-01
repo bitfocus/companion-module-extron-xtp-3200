@@ -1,4 +1,4 @@
 # companion-module-extron-xtp-3200
 See [HELP.md](./HELP.md) and [LICENSE](./LICENSE)
 
-API found here: [http://127.0.0.1:5000/api/v1]
+API found here: [https://www.extron.com/download/files/userman/68-1736-02_J_xtp_ii_crosspoint.pdf]
