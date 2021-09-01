@@ -1,5 +1,6 @@
 const instance_skel = require('../../instance_skel')
 const TelnetSocket = require('../../telnet')
+const { initPresets } = require('./presets')
 let debug = () => {}
 
 class instance extends instance_skel {
@@ -14,12 +15,13 @@ class instance extends instance_skel {
 
 	updateConfig(config) {
 		this.config = config
+		this.initPresets()
 		this.init_telnet()
 	}
 
 	init() {
 		debug = this.debug
-
+		this.initPresets()
 		this.init_telnet()
 	}
 
@@ -48,9 +50,8 @@ class instance extends instance_skel {
 			this.login = true
 			this.status(this.STATUS_OK)
 			debug('logged in')
-		}
-		else {
-			this.log("info", "Response: " + data.toString())
+		} else {
+			this.log('info', 'Response: ' + data.toString())
 		}
 
 		// Heatbeat to keep connection alive
@@ -121,6 +122,10 @@ class instance extends instance_skel {
 		{ label: 'Video only', id: '%' },
 		{ label: 'Audio only', id: '$' },
 	]
+
+	initPresets() {
+		this.setPresetDefinitions(initPresets.bind(this)())
+	}
 
 	// Return config fields for web config
 	config_fields() {
@@ -206,17 +211,6 @@ class instance extends instance_skel {
 			},
 			recall: {
 				label: 'Recall preset',
-				options: [
-					{
-						type: 'textinput',
-						label: 'preset',
-						id: 'preset',
-						regex: this.REGEX_NUMBER,
-					},
-				],
-			},
-			saveGlobalP: {
-				label: 'Save preset',
 				options: [
 					{
 						type: 'textinput',
