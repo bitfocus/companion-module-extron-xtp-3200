@@ -6,7 +6,7 @@
 		"Protocol",
 		"Sis",
 		"Matrix"
-		],
+	],
 	"manufacturer": "Extron",
 	"product": "XTP II Crosspoint 3200 Matrix",
 	"shortname": "XTP 3200",
@@ -16,5 +16,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Jeffrey Davidsz <jeffrey.davidsz@vicreo.eu>",
-	"license": "MIT"
+	"license": "MIT",
+	"homepage": "https://github.com/bitfocus/companion-module-extron-xtp-3200#readme",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-extron-xtp-3200/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-extron-xtp-3200.git"
+	}
 }
