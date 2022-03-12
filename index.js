@@ -64,7 +64,7 @@ class instance extends instance_skel {
 		if (this.login === true) {
 			clearInterval(this.heartbeat_interval)
 			let beat_period = 60 // Seconds
-			this.heartbeat_interval = setInterval(heartbeat, beat_period * 1000)
+			this.heartbeat_interval = setInterval(heartbeat.bind(this), beat_period * 1000)
 		} else {
 			debug('data nologin', data)
 		}
